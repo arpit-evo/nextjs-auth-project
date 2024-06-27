@@ -2,13 +2,12 @@ import { connect } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 
-connect()
+connect();
 
 export const POST = async (req: NextRequest) => {
   try {
     const reqBody = await req.json();
     const { token } = reqBody;
-    console.log(token);
 
     const user = await User.findOne({
       verifyToken: token,
@@ -28,7 +27,6 @@ export const POST = async (req: NextRequest) => {
       message: "Email verified successfully",
       success: true,
     });
-    
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
