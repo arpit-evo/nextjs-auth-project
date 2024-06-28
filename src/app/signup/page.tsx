@@ -3,7 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { toast } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const SignUp = () => {
   const router = useRouter();
@@ -23,7 +23,9 @@ const SignUp = () => {
       console.log(response.data);
       toast.success("user registered");
       setLoading(false);
-      router.push("/login");
+      setTimeout(() => {
+        router.push("/login");
+      }, 30000);
     } catch (error: any) {
       toast.error(error.message);
       setLoading(false);
@@ -44,7 +46,8 @@ const SignUp = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 w-fit mx-auto">
-      <h1 className="mb-2">{loading ? "Processing" : "Signup"}</h1>
+      <Toaster />
+      <h1 className="mb-2 text-5xl">{loading ? "Processing" : "Signup"}</h1>
       <hr />
       <label htmlFor="username" className="text-left w-full">
         username
@@ -81,7 +84,9 @@ const SignUp = () => {
       />
       <button
         onClick={onSignup}
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+        className={`p-2 border border-gray-400 rounded-lg mb-4 ${
+          buttonDisabled && "text-gray-400 "
+        }`}
         disabled={buttonDisabled}
       >
         Signup
