@@ -46,8 +46,8 @@ const SignUp = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 w-fit mx-auto">
-      <Toaster />
-      <h1 className="mb-2 text-5xl">{loading ? "Processing" : "Signup"}</h1>
+      <Toaster position="top-right"/>
+      <h1 className="mb-2 text-3xl">{loading ? "Processing" : "Signup"}</h1>
       <hr />
       <label htmlFor="username" className="text-left w-full">
         username
