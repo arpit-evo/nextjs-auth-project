@@ -75,7 +75,7 @@ const Login = () => {
       >
         Login
       </button>
-      <Link href="/signup" className="underline text-blue-600">If you don't have account, create one</Link>
+      <Link href="/signup" className="underline text-blue-600 text-right w-full">don't have account,<br/> create one</Link>
     </div>
   );
 };
