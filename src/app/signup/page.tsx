@@ -46,7 +46,7 @@ const SignUp = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 w-fit mx-auto">
-      <Toaster position="top-right"/>
+      <Toaster position="top-right" />
       <h1 className="mb-2 text-3xl">{loading ? "Processing" : "Signup"}</h1>
       <hr />
       <label htmlFor="username" className="text-left w-full">
@@ -91,7 +91,9 @@ const SignUp = () => {
       >
         Signup
       </button>
-      <Link href="/login">Visit login page</Link>
+      <Link href="/login" className="underline text-blue-600 text-right w-full">
+        Visit login page
+      </Link>
     </div>
   );
 };

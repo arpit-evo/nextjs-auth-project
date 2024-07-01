@@ -41,14 +41,14 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 w-fit mx-auto">
       <Toaster position="top-right" />
-      <h1 className="mb-2 text-3xl">{loading ? "Processing" : "Login"}</h1>
+      <h1 className="mb-2 text-4xl">{loading ? "Processing" : "Login"}</h1>
       <hr />
 
       <label htmlFor="email" className="text-left w-full">
         email
       </label>
       <input
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black w-full"
         id="email"
         type="text"
         value={user.email}
@@ -59,7 +59,7 @@ const Login = () => {
         password
       </label>
       <input
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black w-full"
         id="password"
         type="password"
         value={user.password}
@@ -75,6 +75,7 @@ const Login = () => {
       >
         Login
       </button>
+      <Link href="/signup" className="underline text-blue-600">If you don't have account, create one</Link>
     </div>
   );
 };
