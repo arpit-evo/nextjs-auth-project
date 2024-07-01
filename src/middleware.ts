@@ -19,6 +19,7 @@ export function middleware(request: NextRequest) {
 }
 
 // See "Matching Paths" below to learn more
+// this decide which page you want to run this middleware
 export const config = {
   matcher: ["/", "/profile", "/login", "/signup", "/verifyemail"],
 };
